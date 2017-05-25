@@ -1,0 +1,6 @@
+#!/bin/bash
+# post_update to run after a push is detected in repo
+
+svn export --force  https://github.com/evanwaxman/gitping/trunk origin_clone
+tar cfz repo.tgz origin_clone
+md5sum repo.tgz > repo_md5.txt
