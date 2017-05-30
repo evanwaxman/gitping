@@ -2,31 +2,8 @@
 
 ### Getting Started
 First setup git repository environments. A complete environment will contain 5
-repositories as displayed below:
+repositories, as displayed in figure.txt:
 
-local                                      server
- __________________________                 ___________________________
-|     ______________       |               |     ______________        |        ________
-|    |              |      |               |    |              |       | push  |        |
-|    | working repo |      |               |    |    origin    |<------|-------|  user  |
-|    |              |      |               |    |              |       |       |________|
-|    |______________|      |               |    |______________|       |    
-|           ^merge to      |               |             |origin hook  |    
-|           |working repo  |               |             |triggered    |    
-|     ______|________      |               |     ________V_____        |    
-|    |              |      |               |    |              |       |   
-|    |  hold repo   |      |               |    |  hold repo   |       |    
-|    |              |      |               |    |  (bare repo) |       |    
-|    |______________|      |               |    |______________|       |    
-|           ^              |               |             |             |
-|___________|______________|               |_____________|_____________|    
-            |inotify event                               |tar repo and send
-            |triggered, commit                           |to dropbox
-            |to hold repo                                |
-            |                  _________                 |
-            /-----------------|         |<---------------/
-                              | dropbox |
-                              |_________|
 
 ##### 1) Create hold repo's
 - run git init inside the local hold repo directory to create the necessary .git
